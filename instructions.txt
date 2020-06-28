@@ -1,0 +1,34 @@
+Prereq : 
+
+ Install npm (latest) , truffle and geth
+
+Main Instruction :
+
+- Delete existing n1/2/3
+- Run init.sh
+- Note down addresses in Address.txt and make relevant changes in genesis.json
+- Run start.sh
+- Run startn1/2/3.sh
+- Open separate terminals and use command : geth attach http://127.0.0.1:8001 (same for 8002/3)
+- Connect Peers together ( Run admin.nodeInfo at each startn* consoles , note down enode value and then in other console of startn* use admin.addPeers('<enode-value>') )
+- Set Etherbase for miners (miner.setEthBase(eth.accounts[1]) in n1 and n3)
+- Unlock accounts in each node (personal.unlockAccount(eth.accounts[0]) in n* and add [1] in n1 & n3)
+- Start Miners (miner.start() in startn* consoles for n1 and n3)
+- Start Remix (http://remix.ethereum.org/)
+- Create your desired smart contract
+- Go to plugin manager and add Solidity Compiler, Deploy and Run Transaction Options
+- Solidity Compiler will keep on compiling your contracts automatically and then show errors if any
+- In Deploy and Run Option, choose environment as "Web Provider" and then provide http://localhost:8001 or your own RPC point  as endpoint   
+- Set amount in value part while sending transactions
+- If a contract is deployed by node 1 and you want to use contract interface at node 2, then note down contract address when its deployed and use "At address" option at Remix to interact with 
+ contract.    
+
+
+Reference :
+
+https://medium.com/datawallet-blog/how-to-deploy-a-local-private-ethereum-blockchain-c2b497f068f4
+https://medium.com/blockchainbistro/set-up-a-private-ethereum-blockchain-and-deploy-your-first-solidity-smart-contract-on-the-caa8334c343d
+
+
+
+

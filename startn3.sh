@@ -1,0 +1,1 @@
+geth --identity "n3" --rpc --rpcport "8003" --rpccorsdomain "*" --datadir "n3" --port "30305" --nodiscover --rpcapi "db,eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any" --txpool.accountslots 1 --allow-insecure-unlock
