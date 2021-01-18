@@ -7,4 +7,6 @@ Steps to bootstrap a private Ethereum based blockchain is mentioned in Instructi
 Platform : Geth
 Language : Solidity
 
+n3 port choker and n3 port release were shell scripts to attempt to partition the generated blockchain into different groups so as to study how partition in network affects functionality of Smart contracts in Ethereum blockchain. 
+
 
